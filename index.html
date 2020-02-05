@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Lunetarium</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --special-text-color: hsla(60, 100%, 50%, 0.5);
+        --border-color: black;
+      }
+
+      @media (prefers-color-scheme: dark) {
+          :root {
+              --special-text-color: hsla(60, 50%, 70%, 0.75);
+              --border-color: white;
+          }
+      }
+
+      .special {
+          color: var(--special-text-color);
+          border: 1px solid var(--border-color);
+      }
+
+    body, .input, .inn, .out {
+      font-family: monaco, 'Courier New', Courier, monospace;
+      box-sizing: border-box;
+      line-height: 16px;
+      font-size: 14px;
+      border: none;
+      outline: none;
+      position: relative;
+    }
+
+    output code, .input {
+      display: block;
+      padding: 5px;
+    }
+
+    .input, .inn, .out {
+      margin-top: 3px;
+      font-weight: normal;
+    }
+
+    output .out {
+      border-left: 3px solid rgb(183, 185, 216);
+    }
+    output .inn {
+      border-left: 3px solid rgb(97, 174, 197);
+    }
+    output .error {
+      border-left: 3px solid rgb(200, 23, 23);
+    }
+    .input {
+      width: 100%;
+      border-left: 3px solid rgb(51, 109, 235);
+    }
+
+
+    li.data,
+    li.file,
+    li.directory {
+      list-style: none;
+      margin: 0;
+      padding: 3px 18px;
+      list-style: none;
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 14px;
+    }
+    
+    .file,
+    .data {
+      background-image: url(./icons/fontawesome/svgs/solid/file.svg)
+    }
+    .data.open {
+      background-image: url(./icons/fontawesome/svgs/solid/file-alt.svg)
+    }
+    .directory {
+      background-image: url(./icons/fontawesome/svgs/solid/folder.svg)
+    }
+    
+    </style>
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <output></output>
+    <input class="input" contenteditable="true" autofocus></input>
+  </body>
+</html>
